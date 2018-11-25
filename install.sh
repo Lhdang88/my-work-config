@@ -26,6 +26,10 @@ else
     
     printf "${GREEN}[SHELL] - installing${NC} edc/bass for fish shell ...\n"
     fish -c "omf install bass"
+
+    printf "${GREEN}[SHELL] - installing${NC} themes for fish shell ...\n"
+    fish -c "omf install lambda"
+    fish -c "omf theme lambda"
 fi
 
 printf "${GREEN}[SHELL] -copying${NC} configs for fish shell ...\n"
