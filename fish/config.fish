@@ -2,6 +2,10 @@
 # set nvm
 set -x  NVM_DIR ~/.nvm
 
+# set go
+set -x GOPATH (go env GOPATH)
+set -x PATH $PATH:(go env GOPATH)/bin
+
 # Abbreviations
 # reload this
 abbr -a rl omf reload
@@ -9,6 +13,9 @@ abbr -a rl omf reload
 abbr -a cdt cd ~/Desktop
 abbr -a cdl cd ~/Downloads
 abbr -a cdd cd ~/Develop
+abbr -a cpy pbcopy
+abbr -a pst pbpaste
+
 # vs code, docker, k8s etc.
 abbr -a cc code .
 abbr -a dc docker
