@@ -38,6 +38,9 @@ cp -r $PWD/fish ~/.config
 printf "${GREEN}[NODE] installing${NC} NVM ...\n"
 brew install nvm
 
+printf "${GREEN}[GOLANG] installing${NC} Golang ...\n"
+brew install golang
+
 # print notes
 printf "${YELLOW}[SHELL] - change ${NC} default shell to fish shell with \n"
 printf "    ${GREEN}sudo sh -c \"echo '/usr/local/bin/fish' >> /etc/shells\" && chsh -s /usr/local/bin/fish ${NC} \n"
