@@ -4,7 +4,6 @@ set -x  NVM_DIR ~/.nvm
 
 # set go
 set -x GOPATH (go env GOPATH)
-set -x PATH $PATH:(go env GOPATH)/bin
 
 # Abbreviations
 # reload this
