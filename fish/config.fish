@@ -1,7 +1,8 @@
 # PATHs
 # set nvm
 set -x  NVM_DIR ~/.nvm
-
+# set rvm
+set -x PATH $PATH ~/.rvm/bin 
 # set go
 set -x GOPATH (go env GOPATH)
 
