@@ -33,9 +33,9 @@ abbr -a gpt git push --tags
 
 # set rvm default
 if rvm use default
-   printf "rvm ready"
+   printf "rvm ready\n"
 else
-   printf "consider running 'rvm install' ..."
+   printf "consider running 'rvm install' ...\n"
 end
 
 # sourcing nvm
