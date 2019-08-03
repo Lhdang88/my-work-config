@@ -31,6 +31,13 @@ abbr -a gp git push
 abbr -a gpl git pull
 abbr -a gpt git push --tags
 
+# set rvm default
+if rvm use default
+   printf "rvm ready"
+else
+   printf "consider running 'rvm install' ..."
+end
+
 # sourcing nvm
 function nvm
    bass source /usr/local/opt/nvm/nvm.sh --no-use ';' nvm $argv
