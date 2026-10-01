@@ -1,10 +1,18 @@
 # PATHs
+# homebrew (Apple Silicon)
+if test -x /opt/homebrew/bin/brew
+   /opt/homebrew/bin/brew shellenv | source
+end
 # set nvm
 set -x  NVM_DIR ~/.nvm
 # set rvm
-set -x PATH $PATH ~/.rvm/bin 
+if test -d ~/.rvm/bin
+   set -x PATH $PATH ~/.rvm/bin
+end
 # set go
-set -x GOPATH (go env GOPATH)
+if command -q go
+   set -x GOPATH (go env GOPATH)
+end
 
 # Abbreviations
 # reload this
@@ -32,22 +40,28 @@ abbr -a gpl git pull
 abbr -a gpt git push --tags
 
 # set rvm default
-if rvm use default
-   printf "rvm ready\n"
-else
-   printf "consider running 'rvm install' ...\n"
+if functions -q rvm; or command -q rvm
+   if rvm use default
+      printf "rvm ready\n"
+   else
+      printf "consider running 'rvm install' ...\n"
+   end
 end
 
 # sourcing nvm
-function nvm
-   bass source /usr/local/opt/nvm/nvm.sh --no-use ';' nvm $argv
-end
+set -l nvm_sh (brew --prefix 2>/dev/null)/opt/nvm/nvm.sh
+if functions -q bass; and test -f $nvm_sh
+   set -g __nvm_sh $nvm_sh
+   function nvm
+      bass source $__nvm_sh --no-use ';' nvm $argv
+   end
 
-if nvm use default
-   printf "nvm ready \n"
-else
-   nvm install --lts
-   nvm alias default node
-   nvm use default
-   printf "nvm ready \n"
+   if nvm use default
+      printf "nvm ready \n"
+   else
+      nvm install --lts
+      nvm alias default node
+      nvm use default
+      printf "nvm ready \n"
+   end
 end
