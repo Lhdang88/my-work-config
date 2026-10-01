@@ -1,2 +1,9 @@
 # downloaded by install.sh
 fish/functions/rvm.fish
+
+# installed by fisher from fish/fish_plugins
+fish/fish_variables
+fish/functions/sdk.fish
+fish/functions/__sdkman-noexport-init.sh
+fish/conf.d/sdk.fish
+fish/completions/sdk.fish

@@ -52,6 +52,25 @@ printf "${GREEN}[SHELL] - installing${NC} themes for fish shell ...\n"
 "$FISH" -c "omf install lambda"
 "$FISH" -c "omf theme lambda"
 
+printf "${GREEN}[SHELL] - installing${NC} fisher and plugins from fish_plugins ...\n"
+brew install fisher
+"$FISH" -c "fisher update"
+
+# SDKMAN needs bash 4+, macOS ships 3.2
+printf "${GREEN}[JAVA] installing${NC} SDKMAN, Java and Maven ...\n"
+brew install bash
+if [ ! -d ~/.sdkman ] ; then
+    curl -s "https://get.sdkman.io?rcupdate=false" | "$BREW_PREFIX/bin/bash"
+fi
+sed -i '' 's/^sdkman_auto_env=.*/sdkman_auto_env=true/' ~/.sdkman/etc/config
+"$FISH" -c "sdk install java < /dev/null; sdk install maven < /dev/null"
+
+printf "${GREEN}[K8S] installing${NC} kubectl ...\n"
+brew install kubernetes-cli
+
+printf "${GREEN}[AWS] installing${NC} AWS CLI ...\n"
+brew install awscli
+
 printf "${GREEN}[NODE] installing${NC} NVM ...\n"
 brew install nvm
 mkdir -p ~/.nvm

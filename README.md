@@ -36,7 +36,8 @@ An existing `~/.config/fish` is moved to `~/.config/fish.bak`.
 fish/
 ├── config.fish        # PATHs, abbreviations, rvm/go/nvm setup
 ├── conf.d/omf.fish    # oh-my-fish bootstrap
-└── functions/         # gacp, gohere, goset
+├── fish_plugins       # fisher plugins (sdkman-for-fish)
+└── functions/         # gacp, gohere, goset, update-tools
 ```
 
 `config.fish` only sets up rvm, go and nvm when they are installed, so fish
@@ -44,6 +45,13 @@ starts cleanly even if some of them are missing. nvm needs the `bass` plugin
 (`omf install bass`).
 
 `functions/rvm.fish` is downloaded by `install.sh` and ignored by git.
+
+fisher plugins are listed in `fish/fish_plugins`; `install.sh` runs
+`fisher update` to install them. The files fisher writes are ignored by git.
+
+Java and Maven come from SDKMAN (`sdk`, via the sdkman-for-fish plugin);
+kubectl and the AWS CLI come from Homebrew. In projects, use the Maven
+wrapper `./mvnw`.
 
 ## Abbreviations
 
@@ -67,3 +75,4 @@ starts cleanly even if some of them are missing. nvm needs the `bass` plugin
 - `gacp <message>` — git add, commit and push in one
 - `gohere <dir>` — create a Go workspace in `<dir>` and set `GOPATH`
 - `goset` — use the current dir as `GOPATH`
+- `update-tools` — upgrade Homebrew packages, SDKMAN candidates and fisher plugins
