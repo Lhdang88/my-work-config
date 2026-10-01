@@ -65,3 +65,4 @@ if functions -q bass; and test -f $nvm_sh
       printf "nvm ready \n"
    end
 end
+export PATH="$HOME/.local/bin:$PATH"
