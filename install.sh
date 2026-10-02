@@ -21,6 +21,9 @@ brew update
 printf "${GREEN}[IDE] - installing${NC} visual studio code ...\n"
 brew install --cask visual-studio-code
 
+printf "${GREEN}[IDE] - installing${NC} IntelliJ IDEA Ultimate ...\n"
+brew install --cask intellij-idea
+
 printf "${GREEN}[SHELL] - installing${NC} fish shell ...\n"
 brew install fish
 FISH="$BREW_PREFIX/bin/fish"
