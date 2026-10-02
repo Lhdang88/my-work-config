@@ -75,4 +75,4 @@ wrapper `./mvnw`.
 - `gacp <message>` — git add, commit and push in one
 - `gohere <dir>` — create a Go workspace in `<dir>` and set `GOPATH`
 - `goset` — use the current dir as `GOPATH`
-- `update-tools` — upgrade Homebrew packages, SDKMAN candidates and fisher plugins
+- `update-tools` — upgrade Homebrew packages (including self-updating casks like IntelliJ), SDKMAN candidates and fisher plugins
