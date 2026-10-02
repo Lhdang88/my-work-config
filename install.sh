@@ -24,6 +24,9 @@ brew install --cask visual-studio-code
 printf "${GREEN}[IDE] - installing${NC} IntelliJ IDEA Ultimate ...\n"
 brew install --cask intellij-idea
 
+printf "${GREEN}[API] - installing${NC} Postman ...\n"
+brew install --cask postman
+
 printf "${GREEN}[SHELL] - installing${NC} fish shell ...\n"
 brew install fish
 FISH="$BREW_PREFIX/bin/fish"
