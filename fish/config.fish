@@ -1,8 +1,5 @@
 # PATHs
-# homebrew (Apple Silicon)
-if test -x /opt/homebrew/bin/brew
-   /opt/homebrew/bin/brew shellenv | source
-end
+# homebrew is set up in conf.d/00-homebrew.fish
 # set nvm
 set -x  NVM_DIR ~/.nvm
 # set rvm

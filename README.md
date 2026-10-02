@@ -35,6 +35,7 @@ An existing `~/.config/fish` is moved to `~/.config/fish.bak`.
 ```
 fish/
 ├── config.fish        # PATHs, abbreviations, rvm/go/nvm setup
+├── conf.d/00-homebrew.fish  # Homebrew PATH, loaded before plugins
 ├── conf.d/omf.fish    # oh-my-fish bootstrap
 ├── fish_plugins       # fisher plugins (sdkman-for-fish)
 └── functions/         # gacp, gohere, goset, update-tools
