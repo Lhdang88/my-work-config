@@ -24,6 +24,9 @@ brew install --cask visual-studio-code
 printf "${GREEN}[IDE] - installing${NC} IntelliJ IDEA Ultimate ...\n"
 brew install --cask intellij-idea
 
+printf "${GREEN}[DB] - installing${NC} DBeaver ...\n"
+brew install --cask dbeaver-community
+
 printf "${GREEN}[SHELL] - installing${NC} fish shell ...\n"
 brew install fish
 FISH="$BREW_PREFIX/bin/fish"
